@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Task Tracker</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --success: #3fb950;
+      --danger: #f85149;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 { font-size: 1.8rem; font-weight: 600; }
+    header p { color: var(--text-muted); margin-top: 0.25rem; }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+
+    /* Add Task Form */
+    .add-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .add-form input {
+      flex: 1;
+      padding: 0.6rem 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .add-form input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .add-form button {
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .add-form button:hover { background: var(--accent-hover); }
+
+    /* Filter Tabs */
+    .filters {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .filters button {
+      padding: 0.3rem 0.8rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .filters button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Task List */
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.15s;
+    }
+
+    .task-item:hover { border-color: var(--accent); }
+
+    .task-item.completed .task-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .task-checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--success);
+    }
+
+    .task-title {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    .task-delete {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    .task-delete:hover { color: var(--danger); background: rgba(248,81,73,0.1); }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+    /* Status Bar */
+    .status-bar {
+      text-align: center;
+      padding: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ Vibe Task Tracker</h1>
+    <p>Built with vibes, structure, and GitHub Copilot</p>
+  </header>
+
+  <main>
+    <form class="add-form" id="addForm">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="What needs to be done?"
+        aria-label="New task title"
+        required
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="filters" role="tablist" aria-label="Filter tasks">
+      <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button data-filter="active" role="tab" aria-selected="false">Active</button>
+      <button data-filter="completed" role="tab" aria-selected="false">Completed</button>
+    </div>
+
+    <ul class="task-list" id="taskList" aria-live="polite"></ul>
+
+    <div class="status-bar" id="statusBar"></div>
+  </main>
+
+  <script>
+    const API = '/api/tasks';
+    const taskList = document.getElementById('taskList');
+    const addForm = document.getElementById('addForm');
+    const taskInput = document.getElementById('taskInput');
+    const statusBar = document.getElementById('statusBar');
+    let currentFilter = 'all';
+
+    // Fetch and render tasks
+    async function loadTasks() {
+      try {
+        const params = new URLSearchParams();
+        if (currentFilter === 'active') params.set('completed', 'false');
+        if (currentFilter === 'completed') params.set('completed', 'true');
+
+        const url = params.toString() ? `${API}?${params}` : API;
+        const res = await fetch(url);
+        const tasks = await res.json();
+        renderTasks(tasks);
+      } catch (err) {
+        taskList.innerHTML = '<li class="empty-state"><span>⚠️</span>Failed to load tasks</li>';
+      }
+    }
+
+    function renderTasks(tasks) {
+      if (tasks.length === 0) {
+        taskList.innerHTML = '<li class="empty-state"><span>📝</span>No tasks yet — add one above!</li>';
+        statusBar.textContent = '';
+        return;
+      }
+
+      taskList.innerHTML = tasks
+        .map(
+          (t) => `
+        <li class="task-item ${t.completed ? 'completed' : ''}" data-id="${t.id}">
+          <input
+            type="checkbox"
+            class="task-checkbox"
+            ${t.completed ? 'checked' : ''}
+            aria-label="Toggle ${t.title}"
+          />
+          <span class="task-title">${escapeHtml(t.title)}</span>
+          <button class="task-delete" aria-label="Delete ${t.title}">✕</button>
+        </li>`
+        )
+        .join('');
+
+      const total = tasks.length;
+      const done = tasks.filter((t) => t.completed).length;
+      statusBar.textContent = `${done} of ${total} completed`;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Add a new task
+    addForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = taskInput.value.trim();
+      if (!title) return;
+
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title }),
+      });
+
+      taskInput.value = '';
+      loadTasks();
+    });
+
+    // Toggle completion or delete (event delegation)
+    taskList.addEventListener('click', async (e) => {
+      const item = e.target.closest('.task-item');
+      if (!item) return;
+      const id = item.dataset.id;
+
+      if (e.target.classList.contains('task-checkbox')) {
+        await fetch(`${API}/${id}/toggle`, { method: 'PATCH' });
+        loadTasks();
+      }
+
+      if (e.target.classList.contains('task-delete')) {
+        await fetch(`${API}/${id}`, { method: 'DELETE' });
+        loadTasks();
+      }
+    });
+
+    // Filter tabs
+    document.querySelector('.filters').addEventListener('click', (e) => {
+      if (e.target.tagName !== 'BUTTON') return;
+      document.querySelectorAll('.filters button').forEach((btn) => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      e.target.classList.add('active');
+      e.target.setAttribute('aria-selected', 'true');
+      currentFilter = e.target.dataset.filter;
+      loadTasks();
+    });
+
+    // Initial load
+    loadTasks();
+  </script>
+</body>
+</html>

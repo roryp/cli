@@ -1,0 +1,32 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-filesystem-server",
+        "${workspaceFolder}"
+      ],
+      "description": "Read and write project files with structured access"
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-github-server"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${env:GITHUB_TOKEN}"
+      },
+      "description": "Interact with GitHub repos, issues, and PRs"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-fetch-server"
+      ],
+      "description": "Fetch URLs and web content for research"
+    }
+  }
+}
