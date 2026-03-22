@@ -26,11 +26,11 @@ Place them in `.github/agents/` and invoke them by name in Copilot Chat.
 ```
 @api-dev Add a PATCH endpoint to update task priority
 ```
-The response will follow REST conventions, use the in-memory store, and include JSDoc — because that's what the `api-dev` profile specifies.
+The response will follow REST conventions, use the in-memory store, and apply Spring Boot patterns — because that's what the `api-dev` profile specifies.
 
 ### Ask the Code Reviewer
 ```
-@code-reviewer Review the task routes for any issues
+@code-reviewer Review the task controller for any issues
 ```
 You'll get structured feedback with severity levels (🔴🟡🟢), focused on correctness and security.
 

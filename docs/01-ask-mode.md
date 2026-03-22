@@ -31,12 +31,12 @@ What are the pros and cons of using an in-memory store vs SQLite for this task t
 
 ### Learn Patterns
 ```
-What's the best way to add input validation to Express routes?
+What's the best way to add input validation to Spring Boot controllers?
 ```
 
 ### Research Before Building
 ```
-How should I structure error handling in a Node.js REST API?
+How should I structure error handling in a Spring Boot REST API?
 ```
 
 ## 💡 Tips

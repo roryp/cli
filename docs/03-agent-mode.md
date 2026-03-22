@@ -34,10 +34,10 @@ It's like handing your plan to a developer who can touch every part of the proje
    ```
 
 3. **Watch Copilot work** — It will:
-   - Add a `searchTasks` function to `src/models/task.js`
-   - Add a new route in `src/routes/tasks.js`
+   - Add a search method to `TaskRepository.java`
+   - Add a new endpoint in `TaskController.java`
    - Update `public/index.html` with a search input
-   - May run `npm start` to verify the changes work
+   - May run `mvn spring-boot:run` to verify the changes work
 
 4. **Review the changes** — Copilot shows a diff for each file. Accept, reject, or ask for adjustments.
 
@@ -46,7 +46,7 @@ It's like handing your plan to a developer who can touch every part of the proje
 | Capability | Example |
 |---|---|
 | Multi-file edits | Update model, routes, and frontend in one go |
-| Terminal commands | `npm install`, `npm test`, `node src/index.js` |
+| Terminal commands | `mvn compile`, `mvn test`, `mvn spring-boot:run` |
 | Error recovery | Reads test failures and fixes the code |
 | File creation | Scaffolds new modules, test files, configs |
 | Tool use (MCP) | Query databases, call APIs, fetch documentation |

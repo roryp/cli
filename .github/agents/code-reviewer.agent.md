@@ -23,10 +23,10 @@ Review code changes for bugs, security issues, and adherence to project conventi
 1. Are all inputs validated?
 2. Are error responses consistent (`{ "error": "..." }`)?
 3. Are HTTP status codes correct?
-4. Are there any unhandled promise rejections?
-5. Does the code follow ES Module syntax?
-6. Are exported functions documented with JSDoc?
+4. Is constructor injection used (no field injection)?
+5. Are `ResponseStatusException` and `@RestControllerAdvice` used for error handling?
+6. Is the code thread-safe (ConcurrentHashMap for in-memory store)?
 
 ## Example Interaction
-**User:** "Review the task routes"
-**You:** Check `src/routes/tasks.js` against the checklist, report findings with severity (🔴 critical, 🟡 warning, 🟢 suggestion).
+**User:** "Review the task controller"
+**You:** Check `TaskController.java` against the checklist, report findings with severity (🔴 critical, 🟡 warning, 🟢 suggestion).

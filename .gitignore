@@ -1,8 +1,11 @@
-node_modules/
-dist/
+target/
 .env
 .env.local
 *.log
 .DS_Store
 Thumbs.db
-coverage/
+.idea/
+*.iml
+.classpath
+.project
+.settings/

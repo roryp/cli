@@ -1,26 +1,27 @@
 # Copilot Instructions — Vibe Coding Workshop
 
 ## Project Overview
-This is a **Vibe Task Tracker** — a lightweight Node.js/Express REST API with a vanilla HTML/CSS/JS frontend. It is designed as a teaching project for a workshop on GitHub Copilot's vibe coding workflow.
+This is a **Vibe Task Tracker** — a Spring Boot REST API with a vanilla HTML/CSS/JS frontend. It is designed as a teaching project for a workshop on GitHub Copilot's vibe coding workflow.
 
 ## Tech Stack
-- **Runtime:** Node.js 20+
-- **Backend:** Express.js (REST API)
+- **Runtime:** Java 21+
+- **Backend:** Spring Boot 3.4 (REST API)
+- **Build:** Maven
 - **Frontend:** Vanilla HTML, CSS, and JavaScript (no frameworks)
 - **Data:** In-memory store (no database — keep it simple for the workshop)
-- **IDs:** UUIDs via the `uuid` package
+- **IDs:** UUIDs via `java.util.UUID`
 
 ## Coding Conventions
-- Use **ES Module** syntax (`import`/`export`), not CommonJS (`require`)
-- Use **`const`** by default; use `let` only when reassignment is needed; never use `var`
-- Prefer **arrow functions** for callbacks and short functions
-- Use **async/await** over raw Promises
-- Name files in **kebab-case** (e.g., `task-routes.js`)
-- Name variables and functions in **camelCase**
+- Use **constructor injection** for Spring beans — never field injection
+- Use **records** or POJOs with explicit getters/setters for models
+- Prefer **`final`** fields and local variables where possible
+- Name files in **PascalCase** (e.g., `TaskController.java`)
+- Name variables and methods in **camelCase**
 - Name classes in **PascalCase**
-- Keep functions small and focused — one responsibility per function
+- Keep methods small and focused — one responsibility per method
 - Always return proper HTTP status codes (200, 201, 204, 400, 404, 500)
-- Include JSDoc comments on exported functions
+- Use **`@RestController`** and **`@RequestMapping`** for API endpoints
+- Use **`ResponseStatusException`** for error responses
 
 ## API Design
 - RESTful routes under `/api/tasks`
@@ -29,13 +30,13 @@ This is a **Vibe Task Tracker** — a lightweight Node.js/Express REST API with 
 - Return consistent error shapes: `{ "error": "message" }`
 
 ## Error Handling
-- Use a centralized error-handling middleware
+- Use a `@RestControllerAdvice` for centralized error handling
 - Never expose stack traces in production responses
-- Log errors to the console for debugging
+- Log errors for debugging
 
 ## Testing
-- Use Node.js built-in test runner (`node --test`)
-- Test files live next to the code they test, named `*.test.js`
+- Use JUnit 5 and Spring Boot Test
+- Test files live under `src/test/java/` mirroring the main source tree
 
 ## Frontend
 - Keep it minimal — a single `index.html` with inline or linked CSS/JS

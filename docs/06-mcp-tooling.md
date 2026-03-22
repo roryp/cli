@@ -28,25 +28,17 @@ Check out [`.vscode/mcp.json`](../.vscode/mcp.json):
 {
   "servers": {
     "filesystem": { ... },  // Read/write project files
-    "github": { ... },      // Interact with GitHub
-    "fetch": { ... }        // Fetch web content
+    "github": { ... }       // Interact with GitHub (remote server)
   }
 }
 ```
 
 | Server | What It Does | Example Use |
 |---|---|---|
-| `filesystem` | Structured file access | "Read all route files and summarize the API" |
+| `filesystem` | Structured file access | "Read all controller files and summarize the API" |
 | `github` | GitHub API access | "Create an issue for the missing validation bug" |
-| `fetch` | Web content retrieval | "Look up the Express.js docs for error handling" |
 
 ## Try It — MCP in Action
-
-### Fetch Documentation
-```
-Look up the Node.js docs for the built-in test runner and summarize the key features
-```
-Copilot uses the `fetch` server to get the docs and provides a summary.
 
 ### Interact with GitHub
 ```
@@ -56,7 +48,7 @@ Copilot uses the `github` server to create the issue directly.
 
 ### File Analysis
 ```
-Read all files in src/routes/ and generate an API documentation table
+Read all files in src/main/java/com/vibetracker/controller/ and generate an API documentation table
 ```
 Copilot uses the `filesystem` server to read the files and produces structured output.
 
@@ -77,8 +69,7 @@ The MCP ecosystem is growing. You can add servers for:
   "servers": {
     "sqlite": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-sqlite-server", "./data/tasks.db"],
-      "description": "Query the task database"
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "./data/tasks.db"]
     }
   }
 }
@@ -86,7 +77,7 @@ The MCP ecosystem is growing. You can add servers for:
 
 ## 💡 Tips
 
-- **Start small.** The filesystem, GitHub, and fetch servers cover most needs.
+- **Start small.** The filesystem and GitHub servers cover most needs.
 - **Use environment variables** for secrets (API keys, tokens) — never hardcode them.
 - **MCP tools work in Agent mode.** Ask mode and Plan mode don't invoke tools.
 - **Check the MCP registry** for community-built servers: [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)

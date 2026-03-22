@@ -18,11 +18,8 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
-
-# Start the dev server (auto-restarts on changes)
-npm run dev
+# Build and run the Spring Boot app
+mvn spring-boot:run
 
 # Open in your browser
 # http://localhost:3000
@@ -42,13 +39,19 @@ cli/
 ├── .vscode/
 │   └── mcp.json                   # MCP server configuration
 ├── src/
-│   ├── index.js                   # Express app entry point
-│   ├── routes/
-│   │   └── tasks.js               # Task API routes
-│   ├── models/
-│   │   └── task.js                # In-memory task store
-│   └── middleware/
-│       └── error-handler.js       # Centralized error handling
+│   └── main/
+│       ├── java/com/vibetracker/
+│       │   ├── VibeTaskTrackerApplication.java  # Spring Boot entry point
+│       │   ├── controller/
+│       │   │   ├── TaskController.java          # Task API endpoints
+│       │   │   ├── HealthController.java        # Health check endpoint
+│       │   │   └── GlobalExceptionHandler.java  # Centralized error handling
+│       │   ├── model/
+│       │   │   └── Task.java                    # Task POJO
+│       │   └── repository/
+│       │       └── TaskRepository.java          # In-memory task store
+│       └── resources/
+│           └── application.properties           # App configuration
 ├── public/
 │   └── index.html                 # Frontend (HTML/CSS/JS)
 ├── docs/                          # Workshop guides (start here!)
@@ -58,13 +61,14 @@ cli/
 │   ├── 04-copilot-instructions.md
 │   ├── 05-agent-profiles.md
 │   └── 06-mcp-tooling.md
-└── package.json
+└── pom.xml                        # Maven build file
 ```
 
 ## 🛠️ Tech Stack
 
-- **Runtime:** Node.js 20+
-- **Backend:** Express.js REST API
+- **Runtime:** Java 21+
+- **Backend:** Spring Boot 3.4 REST API
+- **Build:** Maven
 - **Frontend:** Vanilla HTML, CSS, JavaScript
 - **Data:** In-memory (no database setup needed)
 

@@ -16,7 +16,7 @@ Copilot reads this file automatically and applies its contents to all suggestion
 
 Without instructions, Copilot uses general best practices. With them, it generates code that **fits your project** — right naming conventions, right patterns, right error handling.
 
-It's the difference between "here's some Express code" and "here's Express code that matches your team's style."
+It's the difference between "here's some Spring Boot code" and "here's Spring Boot code that matches your team's style."
 
 ## What's in This Project's File?
 
@@ -25,11 +25,11 @@ Check out [`.github/copilot-instructions.md`](../.github/copilot-instructions.md
 | Section | What It Does |
 |---|---|
 | Project Overview | Tells Copilot what this app is and its purpose |
-| Tech Stack | Specifies Node.js, Express, vanilla frontend — no guessing |
-| Coding Conventions | ES Modules, const-first, arrow functions, kebab-case files |
+| Tech Stack | Specifies Java 21, Spring Boot, vanilla frontend — no guessing |
+| Coding Conventions | Constructor injection, PascalCase classes, camelCase methods |
 | API Design | RESTful routes, JSON bodies, consistent error shapes |
-| Error Handling | Centralized middleware, no stack traces in responses |
-| Testing | Node.js built-in test runner, colocated test files |
+| Error Handling | `@RestControllerAdvice`, no stack traces in responses |
+| Testing | JUnit 5 and Spring Boot Test |
 | Workshop Context | Reminds Copilot this is for learners — favor clarity |
 
 ## Try It — Experiment
