@@ -1,5 +1,7 @@
 # 📄 copilot-instructions.md — Teach Copilot Your Conventions
 
+<img src="images/copilot-instructions.png" alt="copilot-instructions.md — Teach Copilot Your Conventions" width="800">
+
 The `copilot-instructions.md` file is how you teach GitHub Copilot the rules of **your** project. It's a simple Markdown file that lives in your repo and shapes every response Copilot gives.
 
 ## What Is It?

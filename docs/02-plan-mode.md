@@ -1,5 +1,7 @@
 # 📐 Plan Mode — Shape the Solution
 
+<img src="images/plan-mode.png" alt="Plan Mode — Shape the Solution" width="800">
+
 Plan mode helps you design a solution before writing code. It's the bridge between exploration (Ask mode) and execution (Agent mode).
 
 ## What Is Plan Mode?

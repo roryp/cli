@@ -1,5 +1,7 @@
 # 🧑‍💻 Agent Profiles (.agent.md) — Reusable Roles for Copilot
 
+<img src="images/agent-profiles.png" alt="Agent Profiles — Reusable Roles for Copilot" width="800">
+
 Agent profiles let you define **specialized roles** that Copilot can assume. Instead of one generic assistant, you get focused experts for different parts of your workflow.
 
 ## What Are Agent Profiles?

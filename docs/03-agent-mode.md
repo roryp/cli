@@ -1,5 +1,7 @@
 # 🤖 Agent Mode — Execute Across Files and Tools
 
+<img src="images/agent-mode.png" alt="Agent Mode — Execute Across Files and Tools" width="800">
+
 Agent mode is where the magic happens. Copilot doesn't just suggest code — it **makes changes** across multiple files, runs terminal commands, and iterates until the job is done.
 
 ## What Is Agent Mode?

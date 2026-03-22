@@ -1,5 +1,7 @@
 # 🔧 MCP Tooling — Extend Copilot's Reach
 
+<img src="images/mcp-tooling.png" alt="MCP Tooling — Extend Copilot's Reach" width="800">
+
 MCP (Model Context Protocol) gives GitHub Copilot access to **external tools and data sources** — turning it from a code assistant into a connected development partner.
 
 ## What Is MCP?

@@ -1,5 +1,7 @@
 # 🔍 Ask Mode — Explore Before You Build
 
+<img src="images/ask-mode.png" alt="Ask Mode — Explore Before You Build" width="800">
+
 Ask mode is your starting point. Before writing any code, use it to explore ideas, understand patterns, and get oriented.
 
 ## What Is Ask Mode?
