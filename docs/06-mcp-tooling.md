@@ -4,7 +4,7 @@ MCP (Model Context Protocol) gives GitHub Copilot access to **external tools and
 
 ## What Is MCP?
 
-MCP is an open protocol that lets AI assistants interact with external servers. Each MCP server provides **tools** that Copilot can invoke during Agent mode:
+MCP is an open protocol that lets AI assistants interact with external servers. Each MCP server provides **tools** that Copilot can invoke from any chat mode:
 
 - Read and write files with structured access
 - Query databases
@@ -16,9 +16,9 @@ MCP is an open protocol that lets AI assistants interact with external servers. 
 ## How It Works
 
 1. You define MCP servers in `.vscode/mcp.json`
-2. VS Code starts the servers when you open the project
+2. VS Code launches local servers on first use, and connects to remote servers automatically
 3. Copilot discovers the available tools
-4. In Agent mode, Copilot calls these tools when needed
+4. Copilot calls these tools when needed — in any chat mode (Ask, Plan, or Agent)
 
 ## This Project's MCP Configuration
 
@@ -27,16 +27,26 @@ Check out [`.vscode/mcp.json`](../.vscode/mcp.json):
 ```json
 {
   "servers": {
-    "filesystem": { ... },  // Read/write project files
-    "github": { ... }       // Interact with GitHub (remote server)
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${workspaceFolder}"
+      ]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
   }
 }
 ```
 
-| Server | What It Does | Example Use |
-|---|---|---|
-| `filesystem` | Structured file access | "Read all controller files and summarize the API" |
-| `github` | GitHub API access | "Create an issue for the missing validation bug" |
+| Server | Type | What It Does | Example Use |
+|---|---|---|---|
+| `filesystem` | Local (stdio) | Structured file access | "Read all controller files and summarize the API" |
+| `github` | Remote (HTTP) | GitHub API access | "Create an issue for the missing validation bug" |
 
 ## Try It — MCP in Action
 
@@ -79,7 +89,7 @@ The MCP ecosystem is growing. You can add servers for:
 
 - **Start small.** The filesystem and GitHub servers cover most needs.
 - **Use environment variables** for secrets (API keys, tokens) — never hardcode them.
-- **MCP tools work in Agent mode.** Ask mode and Plan mode don't invoke tools.
+- **MCP tools work in all chat modes** — Ask, Plan, and Agent can all invoke tools.
 - **Check the MCP registry** for community-built servers: [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
 ## The Complete Workflow

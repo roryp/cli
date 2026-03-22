@@ -9,40 +9,46 @@ Agent profiles let you define **specialized roles** that Copilot can assume. Ins
 - **Guidelines** (how they work)
 - **Examples** (what good output looks like)
 
-Place them in `.github/agents/` and invoke them by name in Copilot Chat.
+Place them in `.github/agents/` and they automatically appear in the **agent dropdown** at the top of the Copilot Chat panel — right next to the Ask / Edit / Agent mode selector.
 
 ## This Project's Agents
 
 | Agent | File | Specialty |
 |---|---|---|
-| `@api-dev` | `.github/agents/api-dev.agent.md` | Backend API development |
-| `@frontend-dev` | `.github/agents/frontend-dev.agent.md` | UI with vanilla HTML/CSS/JS |
-| `@code-reviewer` | `.github/agents/code-reviewer.agent.md` | Code review and quality checks |
-| `@docs-writer` | `.github/agents/docs-writer.agent.md` | Documentation and guides |
+| api-dev | `.github/agents/api-dev.agent.md` | Backend API development |
+| frontend-dev | `.github/agents/frontend-dev.agent.md` | UI with vanilla HTML/CSS/JS |
+| code-reviewer | `.github/agents/code-reviewer.agent.md` | Code review and quality checks |
+| docs-writer | `.github/agents/docs-writer.agent.md` | Documentation and guides |
 
 ## Try It — Use an Agent
 
+To use an agent, select it from the **dropdown** at the top of the Copilot Chat panel (where you choose between Ask / Edit / Agent mode). Pick the agent you want, then type your prompt as normal.
+
 ### Ask the API Developer
+Select **api-dev** from the dropdown, then type:
 ```
-@api-dev Add a PATCH endpoint to update task priority
+Add a PATCH endpoint to update task priority
 ```
 The response will follow REST conventions, use the in-memory store, and apply Spring Boot patterns — because that's what the `api-dev` profile specifies.
 
 ### Ask the Code Reviewer
+Select **code-reviewer** from the dropdown, then type:
 ```
-@code-reviewer Review the task controller for any issues
+Review the task controller for any issues
 ```
 You'll get structured feedback with severity levels (🔴🟡🟢), focused on correctness and security.
 
 ### Ask the Frontend Developer
+Select **frontend-dev** from the dropdown, then type:
 ```
-@frontend-dev Add a dark/light theme toggle to the UI
+Add a dark/light theme toggle to the UI
 ```
 The response will use CSS custom properties, semantic HTML, and no external dependencies.
 
 ### Ask the Docs Writer
+Select **docs-writer** from the dropdown, then type:
 ```
-@docs-writer Write a guide for the new priority feature
+Write a guide for the new priority feature
 ```
 You'll get beginner-friendly documentation with examples, callouts, and clear structure.
 

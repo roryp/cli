@@ -28,7 +28,7 @@ mvn spring-boot:run
 ## 📁 Project Structure
 
 ```
-cli/
+vibecoding/
 ├── .github/
 │   ├── copilot-instructions.md    # Project conventions for Copilot
 │   └── agents/
