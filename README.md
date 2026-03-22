@@ -67,7 +67,7 @@ cli/
 ## 🛠️ Tech Stack
 
 - **Runtime:** Java 21+
-- **Backend:** Spring Boot 3.4 REST API
+- **Backend:** Spring Boot 4.0 REST API
 - **Build:** Maven
 - **Frontend:** Vanilla HTML, CSS, JavaScript
 - **Data:** In-memory (no database setup needed)

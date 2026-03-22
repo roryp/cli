@@ -5,7 +5,7 @@ This is a **Vibe Task Tracker** — a Spring Boot REST API with a vanilla HTML/C
 
 ## Tech Stack
 - **Runtime:** Java 21+
-- **Backend:** Spring Boot 3.4 (REST API)
+- **Backend:** Spring Boot 4.0 (REST API)
 - **Build:** Maven
 - **Frontend:** Vanilla HTML, CSS, and JavaScript (no frameworks)
 - **Data:** In-memory store (no database — keep it simple for the workshop)
