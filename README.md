@@ -2,8 +2,6 @@
 
 <img src="docs/images/vibe-workflow.png" alt="The Vibe Coding Workflow" width="800">
 
-> **Vibe code with structure, context, and control.**
-
 A hands-on workshop project that demonstrates how to use GitHub Copilot effectively — beyond the hype. Built as a simple **Task Tracker** app, this repo is a teaching tool for Copilot's practical workflow.
 
 ## 🎯 What You'll Learn
