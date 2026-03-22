@@ -51,13 +51,27 @@ It's like handing your plan to a developer who can touch every part of the proje
 | File creation | Scaffolds new modules, test files, configs |
 | Tool use (MCP) | Query databases, call APIs, fetch documentation |
 
+## Agent Handovers
+
+You can hand off an existing task from one agent type to another to take advantage of their unique strengths. For example, create a plan with a local agent, hand off to Copilot CLI for a proof of concept, then continue with a cloud agent to submit a pull request for team review.
+
+To hand off a session, select a different agent type from the **session type dropdown** in the chat input box. VS Code creates a new session, carrying over the full conversation history and context. The original session is archived after handoff.
+
+| From | To | Why |
+|---|---|---|
+| Local agent (Plan) | Copilot CLI | Run an autonomous proof of concept in the background |
+| Copilot CLI | Cloud agent | Submit a polished PR for team review |
+| Local agent | Cloud agent | Hand off a well-defined task to run on remote infrastructure |
+
+In a Copilot CLI session, you can also delegate to a cloud agent by typing the `/delegate` command.
+
 ## 💡 Tips
 
 - **Start with a plan.** Agent mode works best when you've already shaped the solution.
 - **Be specific about scope.** "Add search to the API and frontend" is better than "Make the app better."
 - **Review diffs carefully.** Agent mode is powerful but not infallible — always review.
 - **Let it iterate.** If the first attempt has errors, Copilot will often fix them automatically.
-- **Use `@workspace`** to give Copilot full context of your project.
+- **Hand off between agents.** Start locally, then delegate to CLI or cloud agents for background or collaborative work.
 
 ## What Comes Next?
 
