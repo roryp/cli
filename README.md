@@ -2,7 +2,7 @@
 
 <img src="docs/images/vibe-workflow.png" alt="The Vibe Coding Workflow" width="800">
 
-A hands-on workshop project that demonstrates how to use GitHub Copilot effectively — beyond the hype. Built as a simple **Task Tracker** app, this repo is a teaching tool for Copilot's practical workflow.
+A hands-on workshop project that demonstrates how to use GitHub Copilot effectively — beyond the hype. Built as a simple **Task Tracker** app.
 
 ## 🎯 What You'll Learn
 
@@ -112,8 +112,6 @@ Vibe coding isn't about giving up control — it's about **working at a higher l
 - **Review** what the agent produces
 - **Configure** Copilot with your conventions
 - **Extend** its capabilities with MCP
-
-Move fast. Stay grounded. Vibe responsibly.
 
 ## 📜 License
 
