@@ -77,4 +77,4 @@ In a Copilot CLI session, you can also delegate to a cloud agent by typing the `
 
 ## What Comes Next?
 
-Now that you know the three modes, learn how to give Copilot even more context with [copilot-instructions.md](./04-copilot-instructions.md).
+Now that you know the three modes, learn how to give Copilot even more context with [copilot-instructions.md](04-copilot-instructions.md).

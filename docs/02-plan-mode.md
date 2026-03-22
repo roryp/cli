@@ -50,4 +50,4 @@ In Plan mode, GitHub Copilot generates a **step-by-step implementation plan** ba
 
 ## What Comes Next?
 
-With your plan ready, move to [Agent Mode](./03-agent-mode.md) to let Copilot execute the changes across your project.
+With your plan ready, move to [Agent Mode](03-agent-mode.md) to let Copilot execute the changes across your project.

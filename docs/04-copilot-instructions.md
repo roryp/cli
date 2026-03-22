@@ -60,4 +60,5 @@ Check out [`.github/copilot-instructions.md`](../.github/copilot-instructions.md
 
 ## What Comes Next?
 
-Instructions are project-wide. For role-specific guidance, check out [Agent Profiles (.agent.md)](./05-agent-profiles.md).
+Instructions are project-wide. For role-specific guidance, check out the next guide: [05-agent-profiles.md](05-agent-profiles.md).
+

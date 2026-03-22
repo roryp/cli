@@ -50,4 +50,4 @@ How should I structure error handling in a Spring Boot REST API?
 
 ## What Comes Next?
 
-Once you've explored and have a clear idea of what to build, switch to [Plan Mode](./02-plan-mode.md) to outline your approach.
+Once you've explored and have a clear idea of what to build, switch to [Plan Mode](02-plan-mode.md) to outline your approach.

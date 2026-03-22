@@ -95,4 +95,4 @@ The YAML frontmatter at the top is required:
 
 ## What Comes Next?
 
-Learn how to extend Copilot's capabilities beyond code with [MCP Tooling](./06-mcp-tooling.md).
+Learn how to extend Copilot's capabilities beyond code with [MCP Tooling](06-mcp-tooling.md).
