@@ -24,7 +24,7 @@ It's like handing your plan to a developer who can touch every part of the proje
 
 ### Scenario: Add a search endpoint
 
-1. **Switch to Agent mode** in Copilot Chat
+1. **Switch to Agent mode** — Select **Agent** from the mode dropdown at the top of the Copilot Chat panel
 
 2. **Give a clear prompt:**
    ```

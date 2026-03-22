@@ -17,7 +17,7 @@ In Plan mode, GitHub Copilot generates a **step-by-step implementation plan** ba
 
 ### Scenario: Add a "priority" field to tasks
 
-1. **Activate Plan mode** — Use `Shift+Tab` in Copilot Chat or select Plan mode from the mode picker
+1. **Activate Plan mode** — Select **Plan** from the mode dropdown at the top of the Copilot Chat panel
 
 2. **Describe what you want:**
    ```

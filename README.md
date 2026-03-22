@@ -45,6 +45,7 @@ vibecoding/
 │       │   ├── controller/
 │       │   │   ├── TaskController.java          # Task API endpoints
 │       │   │   ├── HealthController.java        # Health check endpoint
+│       │   │   ├── FaviconController.java       # Favicon handler
 │       │   │   └── GlobalExceptionHandler.java  # Centralized error handling
 │       │   ├── model/
 │       │   │   └── Task.java                    # Task POJO
@@ -77,11 +78,11 @@ vibecoding/
 | Method | Path | Description |
 |---|---|---|
 | `GET` | `/api/tasks` | List all tasks (filter: `?completed=true\|false`) |
-| `GET` | `/api/tasks/:id` | Get a single task |
+| `GET` | `/api/tasks/{id}` | Get a single task |
 | `POST` | `/api/tasks` | Create a task (`{ "title": "..." }`) |
-| `PUT` | `/api/tasks/:id` | Update a task |
-| `PATCH` | `/api/tasks/:id/toggle` | Toggle task completion |
-| `DELETE` | `/api/tasks/:id` | Delete a task |
+| `PUT` | `/api/tasks/{id}` | Update a task |
+| `PATCH` | `/api/tasks/{id}/toggle` | Toggle task completion |
+| `DELETE` | `/api/tasks/{id}` | Delete a task |
 | `GET` | `/api/health` | Health check |
 
 ## 🧪 Workshop Flow

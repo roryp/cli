@@ -43,7 +43,7 @@ How should I structure error handling in a Spring Boot REST API?
 
 - **Be specific.** "How does the task route work?" is better than "Explain the code."
 - **Ask follow-ups.** Copilot remembers the conversation context.
-- **Use `@workspace`** to scope questions to your project files.
+- **Add context.** Drag files into the chat or use `#file` to scope questions to specific project files.
 - **No pressure.** Ask mode never changes your files — it's pure exploration.
 
 ## What Comes Next?

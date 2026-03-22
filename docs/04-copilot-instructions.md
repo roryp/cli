@@ -43,8 +43,8 @@ Check out [`.github/copilot-instructions.md`](../.github/copilot-instructions.md
 2. **Modify the instructions** — add a new rule:
    ```markdown
    ## Logging
-   - Use structured JSON logging with `console.log(JSON.stringify({ ... }))`
-   - Include a timestamp, level, and message in every log entry
+   - Use SLF4J for all logging (`private static final Logger log = LoggerFactory.getLogger(MyClass.class)`)
+   - Log at appropriate levels: ERROR for failures, WARN for recoverable issues, INFO for key events
    ```
 
 3. **Ask Copilot again** and see how the output changes to include structured logging.

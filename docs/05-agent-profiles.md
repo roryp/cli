@@ -57,6 +57,11 @@ You'll get beginner-friendly documentation with examples, callouts, and clear st
 Here's the structure of a good `.agent.md` file:
 
 ```markdown
+---
+description: "Short description shown in the agent dropdown"
+tools: [read, edit, search, execute]
+---
+
 # Agent Name
 
 One-sentence description of who this agent is.
@@ -73,6 +78,10 @@ What this agent owns and is responsible for.
 **User:** "Example prompt"
 **You:** Description of expected behavior
 ```
+
+The YAML frontmatter at the top is required:
+- **`description`** — appears in the agent dropdown to help you pick the right one
+- **`tools`** — controls which capabilities the agent can use (e.g., `read`, `edit`, `search`, `execute`)
 
 ## 💡 Tips
 
