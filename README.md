@@ -111,6 +111,7 @@ Vibe coding isn't about giving up control — it's about **working at a higher l
 - **Plan** before you code
 - **Review** what the agent produces
 - **Configure** Copilot with your conventions
+- **Specialize** with Agent Profiles
 - **Extend** its capabilities with MCP
 
 ## 📜 License
