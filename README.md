@@ -18,8 +18,8 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 ## 🚀 Quick Start
 
 ```bash
-# Build and run the Spring Boot app
-mvn spring-boot:run
+# Build and run the Spring Boot app (uses the included Maven wrapper — no Maven install needed)
+./mvnw spring-boot:run
 
 # Open in your browser
 # http://localhost:3000
