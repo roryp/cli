@@ -1,0 +1,22 @@
+{
+  "name": "Vibe Task Tracker",
+  "image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic"
+      }
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "./mvnw dependency:resolve",
+  "remoteUser": "vscode"
+}
