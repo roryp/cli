@@ -29,6 +29,8 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 ```
 vibecoding/
+├── .devcontainer/
+│   └── devcontainer.json          # Dev container config (sandboxed environment)
 ├── .github/
 │   ├── copilot-instructions.md    # Project conventions for Copilot
 │   └── agents/
@@ -102,6 +104,34 @@ The workshop follows the six-stage pipeline shown in the diagram above. Each sta
 5. **Specialize with Agent Profiles** ([guide](docs/05-agent-profiles.md)) — Define focused expert personas (API developer, code reviewer, frontend specialist, docs writer) in `.github/agents/`. Select them from the dropdown to get role-specific responses.
 
 6. **Extend with MCP Tooling** ([guide](docs/06-mcp-tooling.md)) — Connect Copilot to external tools via MCP servers. This project includes a filesystem server for structured file access and a GitHub server for issue/PR management — and you can add databases, cloud APIs, and more.
+
+## 🛡️ Safe Auto-Approve with Dev Containers
+
+When using Copilot's Agent mode, the **approvals dropdown** in the chat window lets you choose how tool calls (file edits, terminal commands) are approved:
+
+| Mode | Behavior |
+|---|---|
+| **Allow** | You approve every action one by one |
+| **Auto** | Copilot runs tools automatically without asking |
+
+**Auto mode is powerful but risky on your local machine** — Copilot can delete files, run arbitrary commands, and modify system config without confirmation.
+
+### Why Dev Containers Make Auto Mode Safe
+
+This project includes a [dev container](.devcontainer/devcontainer.json) that runs your entire workspace inside an **isolated, disposable container**. When you open this repo in a dev container (or GitHub Codespace), every action Copilot takes is sandboxed:
+
+- **File changes** only affect the container filesystem, not your host machine
+- **Terminal commands** execute inside the container — they can't touch your local OS
+- **If something goes wrong**, you can rebuild the container from scratch in seconds
+- **Your host machine stays untouched** regardless of what Copilot does
+
+### How to Use It
+
+1. **Open in a dev container** — In VS Code, run `Dev Containers: Reopen in Container` from the command palette (or open in a GitHub Codespace)
+2. **Set approvals to Auto** — In the Copilot Chat panel, click the approvals dropdown and select **Auto**
+3. **Vibe with confidence** — Give Copilot complex, multi-step tasks and let it execute freely. The container is your safety net.
+
+> **💡 Tip:** Always use a dev container or Codespace when enabling auto-approve. Never use auto mode on your bare local machine unless you fully trust the task scope.
 
 ## 🎶 The Vibe Coding Philosophy
 
