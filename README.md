@@ -17,7 +17,11 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 ## � Prerequisites
 
-### Required
+### Dev Container / GitHub Codespace (zero local setup)
+
+If you open this project in a **dev container** or **GitHub Codespace**, everything is pre-configured — no manual installation required. The container image (`mcr.microsoft.com/devcontainers/java:21-bookworm`) includes Java 21, Maven, and the GitHub CLI. It also auto-installs the recommended VS Code extensions (Java Pack, Spring Boot Tools, GitHub Copilot) and pre-downloads Maven dependencies on creation.
+
+### Manual Installation
 
 | Tool | Version | Notes |
 |---|---|---|
@@ -32,9 +36,6 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 |---|---|---|
 | **Node.js** | 18+ | Required if you want to use the MCP filesystem server (`npx @modelcontextprotocol/server-filesystem`). Download from [nodejs.org](https://nodejs.org/). |
 
-### Dev Container / GitHub Codespace (zero local setup)
-
-If you open this project in a **dev container** or **GitHub Codespace**, everything is pre-configured — no manual installation required. The container image (`mcr.microsoft.com/devcontainers/java:21-bookworm`) includes Java 21, Maven, and the GitHub CLI. It also auto-installs the recommended VS Code extensions (Java Pack, Spring Boot Tools, GitHub Copilot) and pre-downloads Maven dependencies on creation.
 
 > **Verify your Java installation:**
 > ```bash
