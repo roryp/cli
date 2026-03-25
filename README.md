@@ -15,11 +15,38 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 | **Agent Profiles** | Define reusable, role-specific personas | [docs/05-agent-profiles.md](docs/05-agent-profiles.md) |
 | **MCP Tooling** | Extend Copilot with external tools and data | [docs/06-mcp-tooling.md](docs/06-mcp-tooling.md) |
 
+## � Prerequisites
+
+### Required
+
+| Tool | Version | Notes |
+|---|---|---|
+| **Java JDK** | 21 or later | Required to compile and run the app. Download from [Adoptium](https://adoptium.net/) or [Oracle](https://www.oracle.com/java/technologies/downloads/). |
+| **Maven** | 3.3.4+ | **Included** — the Maven Wrapper (`mvnw` / `mvnw.cmd`) is bundled in the repo, so no separate Maven install is needed. |
+| **Git** | Any recent version | To clone the repository. |
+| **Web browser** | Any modern browser | To access the frontend at `http://localhost:3000`. |
+
+### Optional (for MCP Tooling)
+
+| Tool | Version | Notes |
+|---|---|---|
+| **Node.js** | 18+ | Required if you want to use the MCP filesystem server (`npx @modelcontextprotocol/server-filesystem`). Download from [nodejs.org](https://nodejs.org/). |
+
+### Dev Container / GitHub Codespace (zero local setup)
+
+If you open this project in a **dev container** or **GitHub Codespace**, everything is pre-configured — no manual installation required. The container image (`mcr.microsoft.com/devcontainers/java:21-bookworm`) includes Java 21, Maven, and the GitHub CLI. It also auto-installs the recommended VS Code extensions (Java Pack, Spring Boot Tools, GitHub Copilot) and pre-downloads Maven dependencies on creation.
+
+> **Verify your Java installation:**
+> ```bash
+> java -version   # should show 21+
+> ```
+
 ## 🚀 Quick Start
 
 ```bash
 # Build and run the Spring Boot app (uses the included Maven wrapper — no Maven install needed)
-./mvnw spring-boot:run
+./mvnw spring-boot:run        # Linux / macOS
+mvnw.cmd spring-boot:run      # Windows
 
 # Open in your browser
 # http://localhost:3000
