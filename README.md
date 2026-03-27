@@ -14,6 +14,7 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 | **copilot-instructions.md** | Teach Copilot your project's conventions | [docs/04-copilot-instructions.md](docs/04-copilot-instructions.md) |
 | **Agent Profiles** | Define reusable, role-specific personas | [docs/05-agent-profiles.md](docs/05-agent-profiles.md) |
 | **MCP Tooling** | Extend Copilot with external tools and data | [docs/06-mcp-tooling.md](docs/06-mcp-tooling.md) |
+| **Testing** | Validate your code with JUnit 5, MockMvc, and Copilot | [docs/07-testing.md](docs/07-testing.md) |
 
 ## � Prerequisites
 
@@ -69,20 +70,25 @@ vibecoding/
 ├── .vscode/
 │   └── mcp.json                   # MCP server configuration
 ├── src/
-│   └── main/
-│       ├── java/com/vibetracker/
-│       │   ├── VibeTaskTrackerApplication.java  # Spring Boot entry point
-│       │   ├── controller/
-│       │   │   ├── TaskController.java          # Task API endpoints
-│       │   │   ├── HealthController.java        # Health check endpoint
-│       │   │   ├── FaviconController.java       # Favicon handler
-│       │   │   └── GlobalExceptionHandler.java  # Centralized error handling
-│       │   ├── model/
-│       │   │   └── Task.java                    # Task POJO
-│       │   └── repository/
-│       │       └── TaskRepository.java          # In-memory task store
-│       └── resources/
-│           └── application.properties           # App configuration
+│   ├── main/
+│   │   ├── java/com/vibetracker/
+│   │   │   ├── VibeTaskTrackerApplication.java  # Spring Boot entry point
+│   │   │   ├── controller/
+│   │   │   │   ├── TaskController.java          # Task API endpoints
+│   │   │   │   ├── HealthController.java        # Health check endpoint
+│   │   │   │   ├── FaviconController.java       # Favicon handler
+│   │   │   │   └── GlobalExceptionHandler.java  # Centralized error handling
+│   │   │   ├── model/
+│   │   │   │   └── Task.java                    # Task POJO
+│   │   │   └── repository/
+│   │   │       └── TaskRepository.java          # In-memory task store
+│   │   └── resources/
+│   │       └── application.properties           # App configuration
+│   └── test/
+│       └── java/com/vibetracker/
+│           ├── VibeTaskTrackerApplicationTests.java  # Smoke test
+│           └── controller/
+│               └── TaskControllerTests.java          # API integration tests
 ├── public/
 │   └── index.html                 # Frontend (HTML/CSS/JS)
 ├── docs/                          # Workshop guides (start here!)
@@ -91,7 +97,8 @@ vibecoding/
 │   ├── 03-agent-mode.md
 │   ├── 04-copilot-instructions.md
 │   ├── 05-agent-profiles.md
-│   └── 06-mcp-tooling.md
+│   ├── 06-mcp-tooling.md
+│   └── 07-testing.md
 └── pom.xml                        # Maven build file
 ```
 
@@ -133,6 +140,8 @@ The workshop follows the six-stage pipeline shown in the diagram above. Each sta
 
 6. **Extend with MCP Tooling** ([guide](docs/06-mcp-tooling.md)) — Connect Copilot to external tools via MCP servers. This project includes a filesystem server for structured file access and a GitHub server for issue/PR management — and you can add databases, cloud APIs, and more.
 
+7. **Validate with Testing** ([guide](docs/07-testing.md)) — Run the existing JUnit 5 + MockMvc test suite and use Copilot to write new tests. Learn the ask → plan → agent pattern for growing test coverage alongside your features.
+
 ## 🛡️ Safe Auto-Approve with Dev Containers
 
 When using Copilot's Agent mode, the **approvals dropdown** in the chat window lets you choose how tool calls (file edits, terminal commands) are approved:
@@ -171,6 +180,7 @@ Vibe coding isn't about giving up control — it's about **working at a higher l
 - **Configure** Copilot with your conventions
 - **Specialize** with Agent Profiles
 - **Extend** its capabilities with MCP
+- **Test** what you build
 
 ## 📜 License
 
