@@ -46,6 +46,9 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(task);
     }
 
+    // Partially or fully updates an existing task by ID.
+    // Accepts optional fields: "title", "description", "completed" in the JSON body.
+    // Only provided fields are updated; omitted fields remain unchanged.
     @PutMapping("/{id}")
     public Task updateTask(@PathVariable String id, @RequestBody Map<String, Object> body) {
         Task task = repository.findById(id)

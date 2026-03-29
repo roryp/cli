@@ -12,8 +12,8 @@ Build and improve the Task Tracker frontend in the `public/` directory. The back
 
 ## Guidelines
 - Write semantic HTML5 (`<main>`, `<section>`, `<article>`, `<button>`, etc.)
-- Use CSS custom properties (variables) for theming
-- Keep JavaScript in a single `app.js` file or modular `<script type="module">` blocks
+- Use CSS custom properties (variables) for theming (currently inline in `<style>` within `index.html`)
+- Keep JavaScript in an inline `<script>` block within `index.html` (the current pattern), or a single `app.js` file if extracting
 - Use `fetch()` for all API calls to `/api/tasks`
 - Handle loading, empty, and error states in the UI
 - Ensure basic accessibility: proper labels, focus management, ARIA attributes where needed
