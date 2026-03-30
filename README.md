@@ -14,9 +14,9 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 4. **Configure with copilot-instructions.md** ([guide](docs/04-copilot-instructions.md)) — Teach Copilot your project's conventions. A single Markdown file at `.github/copilot-instructions.md` ensures every suggestion matches your coding style, tech stack, and error handling patterns.
 
-5. **Specialize with Agent Profiles** ([guide](docs/05-agent-profiles.md)) — Define focused expert personas (API developer, code reviewer, frontend specialist, docs writer) in `.github/agents/`. Select them from the dropdown to get role-specific responses.
+5. **Specialize with Agent Profiles** ([guide](docs/05-agent-profiles.md)) — Define focused expert personas (API developer, code reviewer, frontend specialist, docs writer) in `.github/agents/`. Each agent has its own set of tools — including MCP servers like Playwright and Microsoft Docs. Select them from the dropdown to get role-specific responses.
 
-6. **Extend with MCP Tooling** ([guide](docs/06-mcp-tooling.md)) — Connect Copilot to external tools via MCP servers. This project includes four servers: filesystem access, GitHub integration, Playwright browser testing, and Microsoft Docs search. Try executing the testing plan in [`PLAN.md`](PLAN.md) to see Copilot drive a real browser through MCP.
+6. **Extend with MCP Tooling** ([guide](docs/06-mcp-tooling.md)) — Connect Copilot to external tools via MCP servers (requires Agent Mode). This project includes four servers: filesystem access, GitHub integration, Playwright browser testing, and Microsoft Docs search. Try executing the testing plan in [`PLAN.md`](PLAN.md) to see Copilot drive a real browser through MCP.
 
 ## 📋 Prerequisites
 

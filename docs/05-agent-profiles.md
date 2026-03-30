@@ -9,11 +9,14 @@ Agent profiles let you define **specialized roles** that Copilot can assume. Ins
 `.agent.md` files are Markdown documents that describe a persona with:
 - A **role** (what they own)
 - **Guidelines** (how they work)
+- **Tools** (which capabilities they can use — including MCP servers like Playwright and Microsoft Docs)
 - **Examples** (what good output looks like)
 
 Place them in `.github/agents/` and they automatically appear in the **agent dropdown** at the top of the Copilot Chat panel — right next to the Ask / Edit / Agent mode selector.
 
 ## This Project's Agents
+
+Each agent in this project has access to a full set of tools — including file editing, terminal execution, MCP servers (Playwright, Microsoft Docs, filesystem, GitHub), and more. The `tools` list in the YAML frontmatter controls exactly which tools each agent can use.
 
 | Agent | File | Specialty |
 |---|---|---|
