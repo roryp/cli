@@ -64,7 +64,7 @@ Here's the structure of a good `.agent.md` file:
 ```markdown
 ---
 description: "Short description shown in the agent dropdown"
-tools: [read, edit, search, execute]
+tools: [read, edit, search, execute, 'playwright/*', 'microsoft-docs/*']
 ---
 
 # Agent Name
@@ -86,7 +86,7 @@ What this agent owns and is responsible for.
 
 The YAML frontmatter at the top is required:
 - **`description`** — appears in the agent dropdown to help you pick the right one
-- **`tools`** — controls which capabilities the agent can use (e.g., `read`, `edit`, `search`, `execute`)
+- **`tools`** — controls which capabilities the agent can use. Built-in categories like `read`, `edit`, `search`, `execute` cover core operations. Use glob patterns like `'playwright/*'` or `'microsoft-docs/*'` to include MCP server tools.
 
 ## 💡 Tips
 
