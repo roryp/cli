@@ -6,6 +6,7 @@ The application has **no end-to-end tests**. Use the **Playwright MCP server** t
 ## Prerequisites
 - The app is running locally on `http://localhost:3000` (`./mvnw spring-boot:run`)
 - The Playwright MCP server is configured in `.vscode/mcp.json` (already included in this project)
+- **Node.js** and **Chrome** are installed (included automatically in the dev container)
 
 ## Steps
 
