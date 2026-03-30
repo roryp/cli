@@ -45,7 +45,7 @@ Check out [`.vscode/mcp.json`](../.vscode/mcp.json):
     },
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp@latest"],
+      "args": ["@playwright/mcp@latest", "--no-sandbox"],
       "type": "stdio"
     },
     "microsoft-docs": {
@@ -83,6 +83,8 @@ Copilot uses the `filesystem` server to read the files and produces structured o
 Navigate to http://localhost:3000, create a task called "Buy groceries", then verify it appears in the list
 ```
 Copilot uses the `playwright` server to launch a browser, fill in the form, click Add, and take a snapshot to confirm the task was created. See [`PLAN.md`](../PLAN.md) for a full end-to-end testing plan you can execute.
+
+> **Dev Container Note:** Chrome and Node.js are installed automatically in the dev container. The Playwright MCP config uses `--no-sandbox` for container compatibility.
 
 ### Search Microsoft Documentation
 ```

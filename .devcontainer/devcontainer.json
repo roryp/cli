@@ -18,6 +18,6 @@
     }
   },
   "forwardPorts": [3000],
-  "postCreateCommand": "./mvnw dependency:resolve",
+  "postCreateCommand": "./mvnw dependency:resolve && npx playwright install chrome",
   "remoteUser": "vscode"
 }

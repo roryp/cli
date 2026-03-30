@@ -22,7 +22,7 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 ### Dev Container / GitHub Codespace (zero local setup)
 
-If you open this project in a **dev container** or **GitHub Codespace**, everything is pre-configured — no manual installation required. The container image (`mcr.microsoft.com/devcontainers/java:21-bookworm`) includes Java 21, Maven, and the GitHub CLI. It also auto-installs the recommended VS Code extensions (Java Pack, Spring Boot Tools, GitHub Copilot) and pre-downloads Maven dependencies on creation.
+If you open this project in a **dev container** or **GitHub Codespace**, everything is pre-configured — no manual installation required. The container image (`mcr.microsoft.com/devcontainers/java:21-bookworm`) includes Java 21, Maven, and the GitHub CLI. The dev container also installs **Node.js** (for MCP servers) and **Chrome** (for Playwright browser testing) automatically. It auto-installs the recommended VS Code extensions (Java Pack, Spring Boot Tools, GitHub Copilot) and pre-downloads Maven dependencies on creation.
 
 ### Manual Installation
 
@@ -33,11 +33,12 @@ If you open this project in a **dev container** or **GitHub Codespace**, everyth
 | **Git** | Any recent version | To clone the repository. |
 | **Web browser** | Any modern browser | To access the frontend at `http://localhost:3000`. |
 
-### Optional (for MCP Tooling)
+### Optional (for MCP Tooling — included in dev container)
 
 | Tool | Version | Notes |
 |---|---|---|
-| **Node.js** | 18+ | Required for MCP servers — filesystem access, Playwright browser testing, and other MCP tools. Download from [nodejs.org](https://nodejs.org/). |
+| **Node.js** | 18+ | Required for MCP servers — filesystem access, Playwright browser testing, and other MCP tools. **Included in the dev container.** Download from [nodejs.org](https://nodejs.org/) for manual setup. |
+| **Chrome** | Latest | Required for Playwright browser testing via MCP. **Installed automatically in the dev container** via `npx playwright install chrome`. |
 
 
 > **Verify your Java installation:**
