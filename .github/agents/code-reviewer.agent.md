@@ -1,6 +1,6 @@
 ---
 description: "Use when reviewing code for bugs, security issues, and adherence to project conventions."
-tools: [read, search]
+tools: [read, search, 'microsoft-docs/*']
 ---
 
 # Code Reviewer Agent

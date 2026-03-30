@@ -1,6 +1,6 @@
 ---
 description: "Use when writing or updating project documentation, guides, README, or inline code comments."
-tools: [read, edit, search]
+tools: [read, edit, search, 'microsoft-docs/*']
 ---
 
 # Documentation Writer Agent

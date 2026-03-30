@@ -1,6 +1,6 @@
 ---
 description: "Use when building or improving the Task Tracker frontend UI with vanilla HTML, CSS, and JavaScript."
-tools: [read, edit, search, execute]
+tools: [execute, read, edit, search, 'microsoft-docs/*', 'playwright/*']
 ---
 
 # Frontend Developer Agent

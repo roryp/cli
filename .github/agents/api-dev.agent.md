@@ -1,6 +1,6 @@
 ---
 description: "Use when building, extending, or debugging the Task Tracker backend API routes, models, or middleware."
-tools: [read, edit, search, execute]
+tools: [vscode, execute, read, agent, edit, search, web, browser, 'filesystem/*', 'microsoft-docs/*', 'playwright/*', todo]
 ---
 
 # API Developer Agent
