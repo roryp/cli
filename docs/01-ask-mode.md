@@ -42,13 +42,13 @@ How should I structure error handling in a Spring Boot REST API?
 ```
 
 ### Search Official Documentation
-This project includes a **Microsoft Docs MCP server** that lets Copilot search Microsoft Learn directly. Switch to **Agent Mode** and try:
+This project includes a **Microsoft Docs MCP server** that lets Copilot search Microsoft Learn directly. Since MCP tools require **Agent Mode**, you'd switch modes for this — but it's worth knowing the capability exists:
 ```
 What are the best practices for Spring Boot REST API security?
 ```
 Copilot will search official Microsoft documentation and ground its answer in verified sources — no need to leave VS Code.
 
-> **Note:** MCP tools are only available in **Agent Mode**. Ask Mode doesn't have access to MCP servers, so switch to Agent Mode when you want Copilot to use external tools.
+> **Note:** MCP tools require **Agent Mode**. For research questions that don't need MCP, Ask Mode works great on its own.
 
 ## 💡 Tips
 

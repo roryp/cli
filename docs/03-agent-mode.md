@@ -67,21 +67,11 @@ To hand off a session, select a different agent type from the **session type dro
 
 In a Copilot CLI session, you can also delegate to a cloud agent by typing the `/delegate` command.
 
-## �️ Auto-Approve Safely with Dev Containers
+## 🛡️ Auto-Approve Safely with Dev Containers
 
-The **approvals dropdown** at the top of the Copilot Chat panel controls how tool calls are approved:
+Agent mode supports **auto-approve**, where Copilot executes file edits and terminal commands without asking. This is powerful but risky on your local machine.
 
-- **Allow** — you confirm every file edit and terminal command
-- **Auto** — Copilot executes everything without asking
-
-Auto mode lets you fully "vibe" — hand Copilot a multi-step task and watch it run. But on your local machine, this means Copilot can delete files or run destructive commands with no safety net.
-
-**The solution: always use a dev container or Codespace.** This project includes a [dev container](../.devcontainer/devcontainer.json) that isolates everything inside a disposable container. Your host machine stays untouched no matter what Copilot does, and you can rebuild the container from scratch if anything goes wrong.
-
-To get started:
-1. Open the project in a dev container (`Dev Containers: Reopen in Container`) or Codespace
-2. Set the approvals dropdown to **Auto**
-3. Give Copilot ambitious, multi-step prompts and let it execute freely
+**The solution: use a dev container or Codespace.** This project includes a [dev container](../.devcontainer/devcontainer.json) that isolates everything inside a disposable container. See the [Safe Auto-Approve with Dev Containers](../README.md#-safe-auto-approve-with-dev-containers) section in the README for full setup instructions.
 
 > ⚠️ **Never use auto-approve on your bare local machine** unless you fully trust the task scope.
 

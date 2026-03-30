@@ -6,7 +6,7 @@ MCP (Model Context Protocol) gives GitHub Copilot access to **external tools and
 
 ## What Is MCP?
 
-MCP is an open protocol that lets AI assistants interact with external servers. Each MCP server provides **tools** that Copilot can invoke from any chat mode:
+MCP is an open protocol that lets AI assistants interact with external servers. Each MCP server provides **tools** that Copilot can invoke in **Agent Mode**:
 
 - Read and write files with structured access
 - Query databases

@@ -5,42 +5,33 @@ The application has **no end-to-end tests**. Use the **Playwright MCP server** t
 
 ## Prerequisites
 - The app is running locally on `http://localhost:3000` (`./mvnw spring-boot:run`)
-- The Playwright MCP server is configured in `.vscode/mcp.json`
+- The Playwright MCP server is configured in `.vscode/mcp.json` (already included in this project)
 
 ## Steps
 
-### Phase 1: Configure Playwright MCP Server
-1. **Add the Playwright MCP server to `.vscode/mcp.json`** — add a `playwright` entry alongside the existing `filesystem` and `github` servers:
-   ```json
-   "playwright": {
-     "command": "npx",
-     "args": ["-y", "@anthropic-ai/mcp-playwright"]
-   }
-   ```
+### Phase 1: Smoke Test — Page Loads
+1. **Navigate to the app** — use Playwright to open `http://localhost:3000` and take a snapshot
+2. **Verify the page title and heading** — confirm the Task Tracker UI renders correctly
 
-### Phase 2: Smoke Test — Page Loads
-2. **Navigate to the app** — use Playwright to open `http://localhost:3000` and take a snapshot
-3. **Verify the page title and heading** — confirm the Task Tracker UI renders correctly
+### Phase 2: Create a Task
+3. **Fill in the task form** — type a title (e.g., "Buy groceries") into the input field
+4. **Submit the form** — click the add button
+5. **Verify the task appears** — take a snapshot and confirm the new task is visible in the task list
 
-### Phase 3: Create a Task
-4. **Fill in the task form** — type a title (e.g., "Buy groceries") into the input field
-5. **Submit the form** — click the add button
-6. **Verify the task appears** — take a snapshot and confirm the new task is visible in the task list
+### Phase 3: Complete a Task
+6. **Toggle task completion** — click the checkbox or toggle button on the newly created task
+7. **Verify the task is marked complete** — confirm the UI reflects the completed state (strikethrough, checkmark, etc.)
 
-### Phase 4: Complete a Task
-7. **Toggle task completion** — click the checkbox or toggle button on the newly created task
-8. **Verify the task is marked complete** — confirm the UI reflects the completed state (strikethrough, checkmark, etc.)
+### Phase 4: Delete a Task
+8. **Delete the task** — click the delete button on the task
+9. **Verify the task is removed** — take a snapshot and confirm the task list is empty
 
-### Phase 5: Delete a Task
-9. **Delete the task** — click the delete button on the task
-10. **Verify the task is removed** — take a snapshot and confirm the task list is empty
-
-### Phase 6: Error Handling
-11. **Try submitting an empty form** — attempt to create a task with no title
-12. **Verify validation** — confirm the UI shows an error or prevents submission
+### Phase 5: Error Handling
+10. **Try submitting an empty form** — attempt to create a task with no title
+11. **Verify validation** — confirm the UI shows an error or prevents submission
 
 ## Relevant Files
-- `.vscode/mcp.json` — add Playwright MCP server configuration
+- `.vscode/mcp.json` — Playwright MCP server configuration (already included)
 - `public/index.html` — the frontend being tested (read-only, for understanding selectors)
 
 ## Verification
@@ -56,7 +47,7 @@ The application has **no end-to-end tests**. Use the **Playwright MCP server** t
 - **Snapshot-based verification** — use `browser_snapshot` to inspect the DOM state rather than screenshots, for reliable assertions
 
 ## Implementation
-To implement this plan, switch to **Agent Mode** and ensure the Playwright MCP server is configured. Copilot will use MCP tools like `browser_navigate`, `browser_click`, `browser_fill_form`, and `browser_snapshot` to drive the browser and verify each step. The **Extend with MCP Tooling** guide ([docs/06-mcp-tooling.md](docs/06-mcp-tooling.md)) covers how MCP servers work.
+To implement this plan, switch to **Agent Mode** and ensure the Playwright MCP server is configured. Copilot will use MCP tools like `browser_navigate`, `browser_click`, `browser_type`, and `browser_snapshot` to drive the browser and verify each step. The **Extend with MCP Tooling** guide ([docs/06-mcp-tooling.md](docs/06-mcp-tooling.md)) covers how MCP servers work.
 
 ## Further Considerations
 1. **Automated test scripts**: The interactive MCP approach is great for exploration and demos. For CI, consider generating Playwright test scripts (`*.spec.ts`) based on what was validated.
