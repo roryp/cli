@@ -11,6 +11,16 @@
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "type": "stdio"
+    },
+    "microsoft-docs": {
+      "url": "https://learn.microsoft.com/api/mcp"
     }
   }
 }

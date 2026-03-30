@@ -41,11 +41,21 @@ What's the best way to add input validation to Spring Boot controllers?
 How should I structure error handling in a Spring Boot REST API?
 ```
 
+### Search Official Documentation
+This project includes a **Microsoft Docs MCP server** that lets Copilot search Microsoft Learn directly. Switch to **Agent Mode** and try:
+```
+What are the best practices for Spring Boot REST API security?
+```
+Copilot will search official Microsoft documentation and ground its answer in verified sources — no need to leave VS Code.
+
+> **Note:** MCP tools are only available in **Agent Mode**. Ask Mode doesn't have access to MCP servers, so switch to Agent Mode when you want Copilot to use external tools.
+
 ## 💡 Tips
 
 - **Be specific.** "How does the task route work?" is better than "Explain the code."
 - **Ask follow-ups.** Copilot remembers the conversation context.
 - **Add context.** Drag files into the chat or use `#file` to scope questions to specific project files.
+- **Need MCP tools?** Switch to [Agent Mode](03-agent-mode.md) — MCP servers like Microsoft Docs and Playwright are only available there.
 - **No pressure.** Ask mode never changes your files — it's pure exploration.
 
 ## What Comes Next?
