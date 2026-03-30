@@ -2,7 +2,8 @@
   "name": "Vibe Task Tracker",
   "image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
   },
   "customizations": {
     "vscode": {
