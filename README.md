@@ -8,6 +8,7 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 | Concept | What It Is | Guide |
 |---|---|---|
+| **Sign Up for Copilot** | Create your GitHub Copilot account and install the VS Code extension | [docs/00-signup-github-copilot.md](docs/00-signup-github-copilot.md) |
 | **Ask Mode** | Explore ideas and understand code before building | [docs/01-ask-mode.md](docs/01-ask-mode.md) |
 | **Plan Mode** | Shape a step-by-step solution before writing code | [docs/02-plan-mode.md](docs/02-plan-mode.md) |
 | **Agent Mode** | Execute changes across files and tools | [docs/03-agent-mode.md](docs/03-agent-mode.md) |
@@ -86,6 +87,7 @@ vibecoding/
 ├── public/
 │   └── index.html                 # Frontend (HTML/CSS/JS)
 ├── docs/                          # Workshop guides (start here!)
+│   ├── 00-signup-github-copilot.md
 │   ├── 01-ask-mode.md
 │   ├── 02-plan-mode.md
 │   ├── 03-agent-mode.md
@@ -120,6 +122,8 @@ vibecoding/
 <img src="docs/images/vibe-workflow.png" alt="The Vibe Coding Workflow" width="800">
 
 The workshop follows the six-stage pipeline shown in the diagram above. Each stage has a dedicated guide:
+
+0. **Sign Up for GitHub Copilot** ([guide](docs/00-signup-github-copilot.md)) — Create your GitHub account, choose a plan (the Free tier is enough), install the VS Code extension, and verify Copilot is working before the workshop begins.
 
 1. **Start with Ask Mode** ([guide](docs/01-ask-mode.md)) — Open Copilot Chat and explore the codebase. Ask how the task model works, compare approaches, and understand existing patterns before touching any code.
 
