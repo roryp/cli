@@ -15,7 +15,8 @@
     "playwright": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest",
+        "-y",
+        "@playwright/mcp@0.0.69",
         "--no-sandbox"
       ],
       "type": "stdio"
