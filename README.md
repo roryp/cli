@@ -20,6 +20,8 @@ A hands-on workshop project that demonstrates how to use GitHub Copilot effectiv
 
 6. **Extend with MCP Tooling** ([guide](docs/06-mcp-tooling.md)) — Connect Copilot to external tools via MCP servers (requires Agent Mode). This project includes four servers: filesystem access, GitHub integration, Playwright browser testing, and Microsoft Docs search. Try executing the testing plan in [`PLAN.md`](PLAN.md) to see Copilot drive a real browser through MCP.
 
+7. **Go Programmatic with the Copilot SDK** ([repo](https://github.com/roryp/github-copilot-sdk)) — Take vibe coding beyond the editor. The Copilot SDK for Java gives you programmatic access to GitHub Copilot via the GitHub Copilot CLI, so you can build AI-powered tools, assistants, and agentic workflows — entirely in Java.
+
 ## 📋 Prerequisites
 
 ### Dev Container / GitHub Codespace (zero local setup)
@@ -188,6 +190,10 @@ Run on port 3000 with `spring.web.resources.static-locations=file:public/`. Buil
 </details>
 
 The full prompt is also available in [RECREATE-PROMPT.md](RECREATE-PROMPT.md).
+
+## ☕ Copilot SDK for Java
+
+Want to go beyond the editor and vibe code programmatically? The **[GitHub Copilot SDK for Java](https://github.com/roryp/github-copilot-sdk)** gives you programmatic access to GitHub Copilot via the GitHub Copilot CLI, so you can build AI-powered tools, assistants, and agentic workflows — entirely in Java.
 
 ## 📜 License
 
