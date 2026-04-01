@@ -1,6 +1,6 @@
 # ✨ Vibe Coding Workshop
 
-> **📊 Slides included!** The presentation deck is available in this repo — see [`Vibe Coding with GitHub Copilot.pdf`](Vibe%20Coding%20with%20GitHub%20Copilot.pdf).
+> **📊 Slides included!** The presentation deck is available in this repo — see [`Vibe Coding with GitHub Copilot.pdf`](slides.pdf).
 
 <img src="docs/images/vibe-workflow.png" alt="The Vibe Coding Workflow" width="800">
 
