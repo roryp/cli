@@ -195,6 +195,11 @@ The full prompt is also available in [RECREATE-PROMPT.md](RECREATE-PROMPT.md).
 
 Want to go beyond the editor and vibe code programmatically? The **[GitHub Copilot SDK for Java](https://github.com/roryp/github-copilot-sdk)** gives you programmatic access to GitHub Copilot via the GitHub Copilot CLI, so you can build AI-powered tools, assistants, and agentic workflows — entirely in Java.
 
+## 🤝 Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for the
+workflow, build/test commands, and pull request guidelines.
+
 ## 📜 License
 
 MIT
